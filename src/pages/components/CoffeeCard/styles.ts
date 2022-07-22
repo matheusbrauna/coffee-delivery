@@ -18,6 +18,14 @@ export const CoffeeCardContainer = styled.div`
     height: 7.5rem;
     margin-top: -1.25rem;
   }
+
+  flex: 1 1 100%;
+  max-width: 16rem;
+
+  @media (max-width: 425px) {
+    flex: 1 1 100%;
+    max-width: 14rem;
+  }
 `
 
 export const Tags = styled.div`
@@ -56,7 +64,7 @@ export const Description = styled(RegularText).attrs({
 `
 
 export const CardFooter = styled.div`
-  width: 100%;
+  max-width: 16rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

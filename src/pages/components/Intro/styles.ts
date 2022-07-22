@@ -5,7 +5,6 @@ import { TitleText } from '../../../components/Typography'
 
 export const IntroContainer = styled.section`
   width: 100%;
-  height: 34rem;
   background: ${({ theme }) => `url(${introBackground}) no-repeat center,
       linear-gradient(
         0deg,
@@ -22,6 +21,37 @@ export const IntroContent = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 3.5rem;
+
+  > div {
+    flex: 1 1 36.75rem;
+  }
+
+  > img {
+    flex: 1 1 100%;
+    max-width: 476px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+
+    > div {
+      flex: 1 1 100%;
+    }
+
+    > img {
+      flex: 1 1 100%;
+      max-width: 320px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    > img {
+      flex: 1 1 100%;
+      max-width: 240px;
+    }
+  }
 `
 
 export const IntroTitle = styled(TitleText)`
@@ -33,4 +63,14 @@ export const BenefitsContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   row-gap: 1.25rem;
   margin-top: 4.125rem;
+
+  @media (max-width: 1024px) {
+    place-items: center;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `

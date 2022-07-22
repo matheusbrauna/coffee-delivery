@@ -6,9 +6,12 @@ export const OurCoffeesContainer = styled.section`
 `
 
 export const CoffeeList = styled.div`
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
   row-gap: 2.5rem;
   margin-top: 3.5rem;
+  flex-wrap: wrap;
+
+  justify-content: center;
 `
