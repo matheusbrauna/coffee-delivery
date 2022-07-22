@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
     -moz-appearance: textfield;
   }
   ::-webkit-scrollbar {
-    width: 0.4rem;
+    width: .4rem;
   }
   ::-webkit-scrollbar-track {
     background: ${({ theme }) => theme.colors['base-button']}
@@ -55,5 +55,19 @@ export const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-thumb {
     border-radius: 2rem;
     background: ${({ theme }) => theme.colors['brand-purple']}
+  }
+
+  html {
+    @media (max-width: 1080px) {
+      font-size: 93.75%; // 15px
+    }
+
+    @media (max-width: 720px) {
+      font-size: 87.5%; // 14px
+    }
+
+    @media (max-width: 425px) {
+      font-size: 81.25%; // 14px
+    }
   }
 `
