@@ -5,7 +5,7 @@ export const OrderConfirmedPageContainer = styled.div`
   flex-direction: column;
   gap: 2.5rem;
   margin-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 9.8rem;
 
   h1 {
     color: ${({ theme }) => theme.colors['brand-yellow-dark']};
