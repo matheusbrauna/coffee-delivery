@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import { Button } from '../../../../components/Button'
 import { RegularText } from '../../../../components/Typography'
 import { ConfirmationSectionContainer } from './styles'
@@ -24,7 +25,9 @@ export function ConfirmationSection() {
         </RegularText>
       </div>
 
-      <Button text="Confirmar pedido" />
+      <NavLink to="/orderConfirmed">
+        <Button text="Confirmar pedido" />
+      </NavLink>
     </ConfirmationSectionContainer>
   )
 }
