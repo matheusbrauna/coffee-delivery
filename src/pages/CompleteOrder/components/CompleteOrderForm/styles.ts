@@ -6,6 +6,10 @@ export const CompleteOrderFormContainer = styled.div`
   flex-direction: column;
   gap: 0.75rem;
   width: 40rem;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 `
 export const FormSectionContainer = styled(SectionBaseStyle)`
   display: flex;
@@ -32,10 +36,35 @@ export const AddressFormContainer = styled.div`
   .complement {
     grid-column: span 2;
   }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+
+    .cep {
+      grid-column: span 1;
+      max-width: 100%;
+    }
+
+    .street {
+      grid-column: span 2;
+    }
+
+    .complement {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 490px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `
 
 export const PaymentMethodOptionsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
+
+  @media (max-width: 425px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `

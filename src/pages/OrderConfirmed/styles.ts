@@ -14,10 +14,26 @@ export const OrderConfirmedPageContainer = styled.div`
   > section {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     p {
       color: ${({ theme }) => theme.colors['base-text']};
+    }
+
+    img {
+      width: 30.75rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    > section {
+      display: block;
+
+      img {
+        margin-top: 1rem;
+        margin-inline: auto;
+      }
     }
   }
 `
@@ -27,7 +43,7 @@ export const OrderDetailsContainer = styled.div`
   padding: 2.5rem;
   border-radius: 6px 36px;
   background-color: ${({ theme }) => theme.colors['base-background']};
-  min-width: 32rem;
+  width: minmax(32rem, 100%);
   display: flex;
   flex-direction: column;
   gap: 2rem;
