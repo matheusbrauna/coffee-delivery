@@ -57,6 +57,10 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.colors['brand-purple']}
   }
 
+  :focus {
+    border-color: ${({ theme }) => theme.colors['brand-yellow-dark']};
+  }
+
   html {
     @media (max-width: 1080px) {
       font-size: 93.75%; // 15px
