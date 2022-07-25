@@ -37,13 +37,11 @@ export function ConfirmationSection() {
         </RegularText>
       </div>
 
-      <NavLink to="/orderConfirmed">
-        <Button
-          text="Confirmar pedido"
-          disabled={cartQuantity <= 0}
-          type="submit"
-        />
-      </NavLink>
+      <Button
+        text="Confirmar pedido"
+        disabled={cartQuantity <= 0}
+        type="submit"
+      />
     </ConfirmationSectionContainer>
   )
 }

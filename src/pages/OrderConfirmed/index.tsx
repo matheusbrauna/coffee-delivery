@@ -6,9 +6,30 @@ import { OrderConfirmedPageContainer, OrderDetailsContainer } from './styles'
 import confirmedOrderImg from '../../assets/confirmed-order-img.png'
 import { InfoWithIcon } from '../../components/InfoWithIcon'
 import { useTheme } from 'styled-components'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { OrderData } from '../CompleteOrder'
+import { paymentMethods } from '../CompleteOrder/components/CompleteOrderForm/PaymentMethodOptions'
+import { useEffect } from 'react'
+
+interface LocationType {
+  state: OrderData
+}
 
 export function OrderConfirmedPage() {
+  const { state } = useLocation() as unknown as LocationType
+
   const { colors } = useTheme()
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!state) {
+      navigate('/')
+    }
+  }, [state, navigate])
+
+  if (!state) return <></>
+
   return (
     <OrderConfirmedPageContainer className="container">
       <div>
@@ -25,9 +46,12 @@ export function OrderConfirmedPage() {
             iconBg={colors['brand-purple']}
             text={
               <RegularText>
-                Entrega em <strong>Rua João Daniel Martinelli 102</strong>,
+                Entrega em{' '}
+                <strong>
+                  {state.street}, {state.number}
+                </strong>
                 <br />
-                Farrapos - Porto Alegre, RS
+                {state.district} - {state.city}, {state.uf}
               </RegularText>
             }
           />
@@ -51,7 +75,7 @@ export function OrderConfirmedPage() {
               <RegularText>
                 Pagamento na entrega
                 <br />
-                <strong>Cartão de crédito</strong>,
+                <strong>{paymentMethods[state.paymentMethod].label}</strong>
               </RegularText>
             }
           />

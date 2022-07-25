@@ -54,8 +54,27 @@ export const AddressFormContainer = styled.div`
     }
   }
 
-  @media (max-width: 490px) {
+  @media (max-width: 830px) {
     grid-template-columns: repeat(2, 1fr);
+
+    .cep {
+      grid-column: span 1;
+      max-width: 100%;
+    }
+
+    .street {
+      grid-column: span 2;
+    }
+
+    .complement {
+      grid-column: span 1;
+    }
+  }
+
+  @media (max-width: 490px) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 `
 
@@ -66,5 +85,10 @@ export const PaymentMethodOptionsContainer = styled.div`
 
   @media (max-width: 425px) {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  > p {
+    grid-column: span / 3;
+    color: ${({ theme }) => theme.colors['base-error']};
   }
 `

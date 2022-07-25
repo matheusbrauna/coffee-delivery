@@ -1,6 +1,24 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const PaymentMethodInputContainer = styled.div`
+  input {
+    visibility: hidden;
+    appearance: none;
+  }
+
+  input:checked + label div {
+    ${({ theme }) => css`
+      background-color: ${theme.colors['brand-purple-light']};
+      border-color: ${theme.colors['brand-purple']};
+
+      &:hover {
+        background-color: ${theme.colors['brand-purple-light']};
+      }
+    `}
+  }
+`
+
+export const ContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
