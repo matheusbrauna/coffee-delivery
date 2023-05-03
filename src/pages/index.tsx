@@ -1,6 +1,6 @@
+import { BlurImage } from '@/components/BlurImage'
 import { CoffeeCard } from '@/components/CoffeeCard'
 import { Coffee, Package, ShoppingCart, Timer } from '@phosphor-icons/react'
-import Image from 'next/image'
 
 export default function Home({ quantity = 0 }: { quantity: number }) {
   return (
@@ -51,12 +51,9 @@ export default function Home({ quantity = 0 }: { quantity: number }) {
             </div>
           </div>
           <div className="flex justify-end flex-1">
-            <Image
-              src="/assets/hero-coffee.png"
-              alt=""
-              width={476}
-              height={360}
-            />
+            <div className="relative w-[29.75rem] h-[22.5rem]">
+              <BlurImage src="/assets/hero-coffee.png" alt="" />
+            </div>
           </div>
         </div>
       </section>

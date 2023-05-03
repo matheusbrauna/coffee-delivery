@@ -6,17 +6,18 @@ import {
   NumberIncrementStepper,
 } from '@chakra-ui/number-input'
 import { Minus, Plus, Trash } from '@phosphor-icons/react'
-import Image from 'next/image'
+import { BlurImage } from './BlurImage'
 
 export function SelectedCoffee() {
   return (
     <div className="flex items-center gap-5 pb-6 mb-6 border-b last:pb-0 last:mb-0 last:border-0">
       <div className="relative w-16 h-16">
-        <Image
+        <BlurImage
           src="/assets/coffee.png"
-          alt=""
           fill
-          className="object-cover object-center"
+          alt=""
+          quality={100}
+          priority
         />
       </div>
       <div>
@@ -27,7 +28,7 @@ export function SelectedCoffee() {
           <NumberInput
             defaultValue={1}
             min={1}
-            w={72}
+            w={80}
             h={40}
             bg="#E6E5E5"
             rounded={6}
@@ -36,6 +37,7 @@ export function SelectedCoffee() {
               <NumberDecrementStepper
                 _disabled={{
                   color: '#8D8686',
+                  cursor: 'not-allowed',
                 }}
                 color="#8047F8"
               >
@@ -50,6 +52,7 @@ export function SelectedCoffee() {
               <NumberIncrementStepper
                 _disabled={{
                   color: '#8D8686',
+                  cursor: 'not-allowed',
                 }}
                 color="#8047F8"
               >

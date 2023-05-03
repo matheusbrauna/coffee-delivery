@@ -6,19 +6,21 @@ import {
   NumberIncrementStepper,
 } from '@chakra-ui/number-input'
 import { Minus, Plus, ShoppingCart } from '@phosphor-icons/react'
-import Image from 'next/image'
+import { BlurImage } from './BlurImage'
 
 export function CoffeeCard() {
   return (
     <div className="max-w-[16rem] px-6 pb-5 bg-base-card rounded-md rounded-tr-[2.25rem]">
       <div className="flex flex-col items-center text-center">
-        <Image
-          src="/assets/coffee.png"
-          width={120}
-          height={120}
-          alt=""
-          className="-mt-5"
-        />
+        <div className="relative w-[7.5rem] h-[7.5rem] -mt-5">
+          <BlurImage
+            src="/assets/coffee.png"
+            fill
+            alt=""
+            quality={100}
+            priority
+          />
+        </div>
         <span className="px-2 flex items-center justify-center leading-5 h-5 mt-3 text-[0.625rem] font-bold uppercase rounded-full text-brand-yellow-dark bg-brand-yellow-light">
           Tradicional
         </span>
@@ -46,6 +48,7 @@ export function CoffeeCard() {
               <NumberDecrementStepper
                 _disabled={{
                   color: '#8D8686',
+                  cursor: 'not-allowed',
                 }}
                 color="#8047F8"
               >
@@ -60,6 +63,7 @@ export function CoffeeCard() {
               <NumberIncrementStepper
                 _disabled={{
                   color: '#8D8686',
+                  cursor: 'not-allowed',
                 }}
                 color="#8047F8"
               >
