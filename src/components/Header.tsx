@@ -5,7 +5,7 @@ import { Location } from './Location'
 
 export function Header() {
   return (
-    <header className="fixed w-full bg-base-background">
+    <header className="fixed z-10 w-full bg-base-background">
       <nav className="container top-0 left-0 flex items-center justify-between h-24">
         <Link href="/">
           <Image src="/assets/logo.svg" alt="" width={84} height={40} />
@@ -13,7 +13,7 @@ export function Header() {
         <div className="flex gap-3">
           <Location />
           <Link
-            href="/cart"
+            href="/checkout"
             className="relative p-2 rounded-md bg-brand-yellow-light"
           >
             <ShoppingCart
