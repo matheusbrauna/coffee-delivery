@@ -11,6 +11,7 @@
   "dependencies": {
     "@chakra-ui/number-input": "^2.0.19",
     "@phosphor-icons/react": "^2.0.9",
+    "@radix-ui/react-form": "^0.0.2",
     "@types/node": "18.16.3",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
