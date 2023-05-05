@@ -1,5 +1,11 @@
 import { SelectedCoffee } from '@/components/SelectedCoffee'
-import { MapPin } from '@phosphor-icons/react'
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPin,
+  Money,
+} from '@phosphor-icons/react'
 
 export default function Checkout() {
   return (
@@ -79,7 +85,32 @@ export default function Checkout() {
                   </div>
                 </form>
               </div>
-              <div className="p-10 rounded-md bg-base-card"></div>
+              <div className="p-10 rounded-md bg-base-card">
+                <div className="flex gap-2">
+                  <CurrencyDollar size={24} className="text-brand-purple" />
+                  <div>
+                    <h3 className="text-base-subtitle">Pagamento</h3>
+                    <p className="text-sm">
+                      O pagamento é feito na entrega. Escolha a forma que deseja
+                      pagar
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3 mt-8">
+                  <div className="flex items-center flex-1 gap-3 p-4 text-xs uppercase border rounded-md border-brand-purple bg-brand-purple-light">
+                    <CreditCard size={16} className="text-brand-purple" />
+                    Cartão de crédito
+                  </div>
+                  <div className="flex items-center flex-1 gap-3 p-4 text-xs uppercase border border-transparent rounded-md bg-base-button">
+                    <Bank size={16} className="text-brand-purple" />
+                    Cartão de débito
+                  </div>
+                  <div className="flex items-center flex-1 gap-3 p-4 text-xs uppercase border border-transparent rounded-md bg-base-button">
+                    <Money size={16} className="text-brand-purple" />
+                    Dinheiro
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex-[2]">
